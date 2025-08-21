@@ -1,0 +1,79 @@
+<!-- types of web api -->
+1. Dom Api
+
+<p id="demo">Hello</p>
+<script>
+  document.getElementById("demo").innerText = "Changed with DOM API!";
+</script>
+
+2. Fetch API (for http request)
+
+<script>
+  fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+</script>
+
+3. Web Storage API (localStorage & sessionStorage)
+
+<script>
+  localStorage.setItem("username", "robin");
+  localStorage.getItem("username");
+</script>
+
+4.Geolocation API for getting user current location
+
+<button onclick="getLocation()">Get Location</button>
+<p id="loc"></p>
+
+<script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (pos) {
+        document.getElementById("loc").innerText =
+          "Latitude: " +
+          pos.coords.latitude +
+          " Longitude: " +
+          pos.coords.longitude;
+      });
+    } else {
+      console.log("Geolocation not supported!");
+    }
+  }
+</script>
+
+5. canvas Api
+<canvas
+  id="myCanvas"
+  width="200"
+  height="100"
+  style="border: 1px solid"
+></canvas>
+<script>
+  let c = document.getElementById("myCanvas");
+  let ctx = c.getContext("2d");
+  ctx.fillStyle = "blue";
+  ctx.fillRect(20, 20, 150, 50);
+</script>
+
+6. Media Apis
+
+<video id="video" autoplay></video>
+<script>
+  navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+    document.getElementById("video").srcObject = stream;
+  });
+</script>
+
+<!-- 
+Real-World Project Examples -->
+
+Weather App → Geolocation API + Fetch API
+
+To-Do List App → DOM API + localStorage API
+
+Drawing App → Canvas API
+
+QR Scanner / Webcam App → Media API
+
+Login Form with Save → Web Storage API

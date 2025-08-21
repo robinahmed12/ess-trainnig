@@ -1,0 +1,55 @@
+
+<!-- common events -->
+Event	When it happens
+onclick	User clicks an element
+ondblclick	User double-clicks
+onmouseover	Mouse hovers over an element
+onmouseout	Mouse moves away
+onkeydown	Key pressed down
+onkeyup	Key released
+onchange	Value of input/selection changes
+onfocus	Input gets focus (cursor inside)
+onblur	Input loses focus
+onsubmit	Form submitted
+onload	Page finished loading
+
+<!-- way to handle events -->
+
+1. Inline (in HTML tag itself)
+<button onclick="alert('Button clicked!')">Click Me</button>
+
+2. Using HTML attributes with JS functions
+<button onclick="sayHello()">Click Me</button>
+<script>
+  function sayHello() {
+    alert("Hello from function!");
+  }
+</script>
+
+3. Using addEventListener (best modern way)
+<button id="btn">Click Me</button>
+<script>
+  document.getElementById("btn").addEventListener("click", function() {
+    alert("Clicked using addEventListener!");
+  });
+</script>
+
+🔹 Examples of Events in Action
+1. Mouse Events
+<div onmouseover="this.style.background='yellow'" 
+     onmouseout="this.style.background='white'" 
+     style="border:1px solid; width:100px; height:50px;">
+  Hover Me
+</div>
+
+2. Keyboard Events
+<input type="text" onkeydown="console.log('Key pressed')">
+
+3. Form Events
+<form onsubmit="alert('Form Submitted!'); return false;">
+  <input type="text" placeholder="Enter name" required>
+  <button type="submit">Submit</button>
+</form>
+
+4. Page Load Event
+<body onload="alert('Page loaded!')">
