@@ -1,0 +1,20 @@
+<!-- Git Branching + Merging Cheat Sheet -->
+
+<!-- Action	Command -->
+
+Check current branch	        git branch
+Create a new branch	            git branch branch-name
+Switch to a branch	            git checkout branch-name or git switch branch-name
+Create & switch (1 step)	    git checkout -b branch-name
+Rename a branch	                git branch -m old-name new-name
+Delete a branch (local)	        git branch -d branch-name
+Force delete branch   	        git branch -D branch-name
+Push branch to GitHub	        git push origin branch-name
+Pull branch from GitHub  	    git fetch origin + git checkout branch-name
+Delete branch on GitHub	        git push origin --delete branch-name
+Switch to main (before merging)	git checkout main
+Merge a branch into main	    git merge branch-name
+Cancel merge in progress	    git merge --abort
+See merged branches	            git branch --merged
+See not merged branches   	    git branch --no-merged
+Push merged main to GitHub	    git push origin main

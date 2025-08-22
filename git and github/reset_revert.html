@@ -1,0 +1,17 @@
+<!-- Git Revert & Reset Cheat Sheet -->
+
+<!-- git revert <commit>	 -->
+    Creates a new commit that undoes a commit	
+     Yes	Undo a commit in shared branches (safe)	git revert a1b2c3
+<!-- git reset --soft <commit>	 -->
+    Moves HEAD to commit, keeps changes staged	
+     Yes (staged)	
+    Redo commits without losing changes	git reset --soft HEAD~1
+<!-- git reset --mixed <commit> (default)	 -->
+    Moves HEAD to commit, keeps changes unstaged	
+     Yes (unstaged)	
+    Undo commit but keep changes in working dir	git reset HEAD~1
+<!-- git reset --hard <commit>	 -->
+    Moves HEAD to commit, deletes all changes	
+     No (erases work)	
+    Discard commits and changes completely	git reset --hard HEAD~1
