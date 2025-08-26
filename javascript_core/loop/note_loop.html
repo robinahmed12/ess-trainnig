@@ -1,0 +1,230 @@
+1. ARRAY METHODS (With Real-World Use Cases)
+
+<!--  -->
+(A) .forEach() – Loop through data (No Return)
+
+Use Case (E-commerce company): Show all product names on UI.
+
+const products = ["Laptop", "Phone", "Tablet"];
+products.forEach(product => console.log(product));
+// Output: Laptop, Phone, Tablet
+
+<!--  -->
+(B) .map() – Transform data
+
+Use Case (Food delivery app): Add tax to each food item price.
+
+const prices = [100, 200, 300];
+const finalPrices = prices.map(price => price * 1.1);
+console.log(finalPrices); // [110, 220, 330]
+
+<!--  -->
+(C) .filter() – Filter data
+
+Use Case (Job portal): Show only jobs in "Remote" location.
+
+const jobs = [
+  { title: "Developer", location: "Remote" },
+  { title: "Designer", location: "Onsite" }
+];
+const remoteJobs = jobs.filter(job => job.location === "Remote");
+console.log(remoteJobs); // [{title: "Developer", location: "Remote"}]
+
+<!--  -->
+(D) .find() – Find first matching element
+
+Use Case (Banking app): Find user by account number.
+
+const users = [
+  { name: "Alice", acc: 123 },
+  { name: "Bob", acc: 456 }
+];
+const user = users.find(u => u.acc === 456);
+console.log(user); // {name: "Bob", acc: 456}
+
+
+<!--  -->
+(E) .some() – At least one condition true?
+
+Use Case (Streaming service): Does any user have a premium account?
+
+const users = [
+  { name: "Alice", premium: false },
+  { name: "Bob", premium: true }
+];
+console.log(users.some(u => u.premium)); // true
+<!--  -->
+(F) .every() – All conditions true?
+
+Use Case (Company HR System): Are all employees verified?
+
+const employees = [
+  { name: "Tom", verified: true },
+  { name: "Sam", verified: true }
+];
+console.log(employees.every(emp => emp.verified)); // true
+
+<!--  -->
+(G) .reduce() – Combine data into one value
+
+Use Case (E-commerce): Total cart value.
+
+const cart = [200, 150, 50];
+const total = cart.reduce((sum, item) => sum + item, 0);
+console.log(total); // 400
+
+<!--  -->
+(H) .sort() – Sort data
+
+Use Case (Marketplace): Sort products by price (low to high).
+
+const prices = [300, 100, 200];
+prices.sort((a, b) => a - b);
+console.log(prices); // [100, 200, 300]
+
+
+<!--  -->
+(I) .includes() – Check if value exists
+
+Use Case (Music App): Is the song in the playlist?
+
+const playlist = ["Song A", "Song B"];
+console.log(playlist.includes("Song B")); // true
+
+<!--  -->
+(J) .push() & .pop() – Add/Remove end
+
+Use Case (Todo App): Add or remove a task.
+
+const todos = ["Task1"];
+todos.push("Task2"); // Add
+todos.pop(); // Remove last
+console.log(todos); // ["Task1"]
+<!--  -->
+(K) .shift() & .unshift() – Add/Remove start
+
+Use Case (Queue System): First come, first serve.
+
+const queue = ["Alice"];
+queue.unshift("Bob"); // Add to start
+queue.shift(); // Remove first
+console.log(queue); // ["Alice"]
+
+<!--  -->
+(L) .splice() – Insert/Remove specific
+
+Use Case (Company Employee List): Remove an employee by index.
+
+const employees = ["John", "Mike", "Sara"];
+employees.splice(1, 1); // Remove Mike
+console.log(employees); // ["John", "Sara"]
+
+<!--  -->
+(M) .slice() – Copy portion
+
+Use Case (Pagination): Show first 2 products only.
+
+const products = ["A", "B", "C"];
+console.log(products.slice(0, 2)); // ["A", "B"]
+
+
+<!--  -->
+(N) .concat() – Merge arrays
+
+Use Case (Merging two department employee lists):
+
+const dept1 = ["Alice"];
+const dept2 = ["Bob"];
+console.log(dept1.concat(dept2)); // ["Alice", "Bob"]
+
+<!--  -->
+(O) .flat() – Flatten nested arrays
+
+Use Case (Travel site): Combine multiple locations.
+
+const locations = [["Paris", "Rome"], ["London"]];
+console.log(locations.flat()); // ["Paris", "Rome", "London"]
+
+
+<!--  -->
+(P) .join() – Convert to string
+
+Use Case (Messaging app): Display usernames in chat.
+
+const users = ["Alice", "Bob"];
+console.log(users.join(", ")); // "Alice, Bob"
+
+
+<!--  -->
+(Q) .indexOf() / .findIndex() – Find index
+
+Use Case (Music app): Find song position in playlist.
+
+const songs = ["A", "B", "C"];
+console.log(songs.indexOf("B")); // 1
+
+<!--  -->
+2. LOOPS (With Real-World Use Cases)
+
+<!--  -->
+(A) for loop – Standard counting
+
+Use Case (Company Payroll): Process 100 employees.
+
+for (let i = 1; i <= 100; i++) {
+  console.log("Processing employee", i);
+}
+
+<!--  -->
+(B) for...of – Loop through arrays
+
+Use Case (Streaming app): Show all movie titles.
+
+const movies = ["Movie1", "Movie2"];
+for (const movie of movies) {
+  console.log(movie);
+}
+
+<!--  -->
+(C) for...in – Loop through object keys
+
+Use Case (Admin Dashboard): Show user details.
+
+const user = { name: "Alice", age: 25 };
+for (const key in user) {
+  console.log(key, user[key]);
+}
+
+<!--  -->
+(D) while loop – Repeat until condition
+
+Use Case (Bank ATM): Keep asking for PIN until correct.
+
+let pin = "";
+while (pin !== "1234") {
+  pin = "1234"; // Simulate user input
+}
+console.log("Access granted");
+
+
+<!--  -->
+(E) do...while – Run at least once
+
+Use Case (Gaming): Keep asking “Play again?” at least once.
+
+let playAgain;
+do {
+  playAgain = false; // Simulate user choice
+} while (playAgain);
+console.log("Game Over");
+
+
+<!-- Why Companies Use These?
+
+Performance (for, forEach) → large datasets like Amazon product listings.
+
+Data Processing (map, filter, reduce) → transforming API data in React apps.
+
+Validation & Logic (every, some) → ensuring conditions (login systems, HR systems).
+
+User Interaction (while, do...while) → repeated prompts (forms, ATM, games). -->
