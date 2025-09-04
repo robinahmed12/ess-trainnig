@@ -1,3 +1,61 @@
+
+// Task: Calculate total price of in-stock items after discount
+const carts = [
+  { name: "Shirt", price: 25, quantity: 2, inStock: true },
+  { name: "Shoes", price: 80, quantity: 1, inStock: true, discount: 0.1 },
+  { name: "Hat", price: 15, quantity: 3, inStock: false },
+  { name: "Pants", price: 40, quantity: 1, inStock: true },
+];
+
+const total = carts
+  .filter((item) => item.inStock)
+  .map((item) => {
+    const subTotal = item.price * item.quantity;
+    return subTotal - subTotal * (item.discount || 0);
+  })
+  .reduce((sum , price)=> sum + price, 0)
+  console.log(`total : $${total.toFixed(2)}`);
+
+
+  // Task: Find available products under budget with category filter
+
+  const product = [
+  { name: 'Laptop', price: 999, category: 'electronics', inStock: true },
+  { name: 'Book', price: 15, category: 'education', inStock: true },
+  { name: 'Phone', price: 699, category: 'electronics', inStock: false },
+  { name: 'Chair', price: 150, category: 'furniture', inStock: true },
+  { name: 'Tablet', price: 299, category: 'electronics', inStock: true }
+];
+
+const budget = 500
+const categoryFilter= "electronics"
+const filterProduct = product
+.filter(p => p.inStock)
+.filter(p=> p.price <= budget)
+.filter(p=> p.category === categoryFilter)
+.sort((a,b)=> a.price - b.price)
+console.log(filterProduct)
+
+// Task: Calculate multiple statistics from data
+
+const testScores = [85, 92, 78, 90, 88, 95, 76, 85, 91, 87];
+
+const stats = {
+  average: testScores.reduce((sum, score) => sum + score, 0) / testScores.length,
+  max: Math.max(...testScores),
+  min: Math.min(...testScores),
+  passed: testScores.filter(score => score >= 80).length,
+  failed: testScores.filter(score => score < 80).length,
+  distribution: testScores.reduce((acc, score) => {
+    const range = Math.floor(score / 10) * 10;
+    acc[range] = (acc[range] || 0) + 1;
+    return acc;
+  }, {})
+};
+
+console.log(stats);
+
+
 // Given [1, 2, 2, 3, 4, 4, 5], remove duplicates using .filter() and .indexOf()
 const number = [1, 2, 2, 3, 4, 4, 5];
 
