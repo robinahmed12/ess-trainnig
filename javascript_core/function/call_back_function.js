@@ -1,3 +1,21 @@
+//Temperature Converter
+function convertTemperature(temp, unit, callback) {
+  let result;
+  if (unit === "ctoF") {
+    result = (temp * 9) / 5 + 32;
+    callback(`${temp}°C = ${result}°F`);
+  } else {
+    result = ((temp - 32) * 5) / 9;
+    callback(`${temp}°F = ${result}°C`);
+  }
+}
+
+convertTemperature(25 , "ctoF", function(result){
+  console.log(result);
+  
+})
+
+
 // Calculator with Callback
 function calculator(a, b, operation) {
   return operation(a, b);
@@ -37,22 +55,20 @@ function calculateTotal(items, callback) {
   for (const price of items) total += price;
   callback(total);
 }
-calculateTotal([19,20,40], total => console.log("total", total));
+calculateTotal([19, 20, 40], (total) => console.log("total", total));
 
 // Basic Greeting Callback
 
-function greet(name , callback){
-    console.log("hello", + name);
-    callback()
-    
+function greet(name, callback) {
+  console.log("hello", +name);
+  callback();
 }
 
 function sayBye() {
-    console.log("good bye")
+  console.log("good bye");
 }
 
-greet("Robin", sayBye)
-
+greet("Robin", sayBye);
 
 function createEmail(user, callback) {
   let msg = `${user} welcome to bd`;
@@ -65,8 +81,7 @@ function sendEmail(content) {
 
 createEmail("Robin", sendEmail);
 
-
-// 
+//
 
 function totalSum(a, b, callback) {
   let sum = a + b;
@@ -78,5 +93,3 @@ function showTotal(result) {
 }
 
 totalSum(10, 20, showTotal);
-
-

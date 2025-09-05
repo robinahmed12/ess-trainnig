@@ -79,3 +79,13 @@ console.log(nums2.find((n) => n > 5)); // 6
 // 2.8 findIndex()
 
 console.log(nums2.findIndex((n) => n > 5)); // 1
+
+let total = 0
+
+while (i => 10 ) {
+  console.log(i);
+  
+}
+
+
+
