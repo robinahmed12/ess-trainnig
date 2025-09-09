@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Form Validation</title>
+  <style>
+    body {
+      background: #212121;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-box {
+      background: #333;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      width: 350px;
+    }
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    input {
+      outline: none;
+    }
+    button {
+      background: #00ffcc;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #00cca3;
+    }
+    .error {
+      color: red;
+      font-size: 0.85rem;
+      margin: -5px 0 8px 0;
+    }
+    .success {
+      color: lightgreen;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Register</h2>
+    <form id="myForm">
+      <input type="text" id="username" placeholder="Enter username" />
+      <p id="username-error" class="error"></p>
+
+      <input type="email" id="email" placeholder="Enter email" />
+      <p id="email-error" class="error"></p>
+
+      <input type="password" id="password" placeholder="Enter password" />
+      <p id="password-error" class="error"></p>
+
+      <input type="password" id="confirm-password" placeholder="Confirm password" />
+      <p id="confirm-error" class="error"></p>
+
+      <button type="submit">Register</button>
+      <p id="success-message" class="success"></p>
+    </form>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
