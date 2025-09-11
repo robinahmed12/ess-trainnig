@@ -109,6 +109,8 @@ console.log(mark.splice(0, 3, 3));
 
 // Array toSpliced()
 
+// iteration method
+
 // Array forEach
 const myNum = [6, 8, 9, 0, 7, 9, 12];
 myNum.forEach((n) => console.log(n));
@@ -120,6 +122,10 @@ console.log(n);
 
 // Array flatMap()
 // Array filter()
+const list = [6, 8, 10, 50, 70, 100];
+const evenNum = list.filter((n) => n % 2 === 0);
+console.log(evenNum);
+
 // Array reduce()
 const yourNum = [6, 8, 10, 7];
 const mySum = yourNum.reduce((sum, num) => sum + num, 0);
@@ -134,3 +140,37 @@ console.log(mySum);
 // Array with()
 // Array Spread (...)
 // Array Rest (...)
+
+// search method
+// Array indexOf()
+// Array lastIndexOf()
+// Array includes()
+const fruitName = ["apple", "mango", "banana"];
+console.log(fruitName.includes("apple"));
+
+// Array find()
+const run = [100, 50, 60, 80];
+console.log(run.find((n) => n % 2 === 0));
+
+// Array findIndex()
+// Array findLast()
+// Array findLastIndex()
+
+// sort method
+
+// Alphabetic Sort
+// Array sort()
+// Array reverse()
+const myMoney = [500 , 700 , 500 , 300]
+console.log(myMoney.reverse().join(" | "));
+
+// Array toSorted()
+// Array toReversed()
+// Sorting Objects
+// Numeric Sort
+// Numeric Sort
+// Random Sort
+// Math.min()
+// Math.max()
+// Home made Min()
+// Home made Max()

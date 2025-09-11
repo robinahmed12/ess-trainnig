@@ -103,11 +103,63 @@ const recipeTwo = new recipe("robin", "polaw", "yummy", 170);
 // console.log(recipeOne);
 recipeOne.cookedBy();
 // console.log(recipeOne.price);
-recipeOne.price = 239999
+recipeOne.price = 239999;
 // console.log(recipeOne.price);
 
 // console.log(recipeTwo === recipeOne);false
 // console.log(recipe instanceof taheri); false
 
+// class Market {
+//   constructor(name, location, area) {
+//     this.name = name;
+//     this.location = location;
+//     this.area = area;
+//   }
 
+//   buyNow (){
+//     console.log(`let's go ${this.name} to buy some vegetable`);
 
+//   }
+
+// }
+
+// class ranirBazar extends Market {
+//     constructor(name , location , area , crowd){
+//         super(name , location , area)
+//         this.crowd = crowd
+//     }
+// }
+
+// const poduwarBazar = new Market("poduwarBazar", "Bissoroad", 1222);
+// console.log(poduwarBazar);
+// poduwarBazar.buyNow()
+// const ranirBazars = new ranirBazar ("ranirbazar", "cumilla", 500, "huge")
+// console.log(ranirBazars);
+
+class Products {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  getInfo() {
+    return `${this.name} price is ${this.price}`;
+  }
+}
+
+class Clothes extends Products {
+  constructor(name, price, size) {
+    super(name, price);
+    this.size = size;
+  }
+}
+
+class Mobile extends Products {
+  constructor(name, price, warranty) {
+    super(name, price);
+    this.warranty = warranty;
+  }
+}
+
+const tShirt = new Clothes("gucci", "$122", "L");
+console.log(tShirt);
