@@ -163,3 +163,55 @@ class Mobile extends Products {
 
 const tShirt = new Clothes("gucci", "$122", "L");
 console.log(tShirt);
+
+const userData = {
+  name: "mahfuz",
+  age: 45,
+  location: {
+    district: "b.baria",
+    thana: "bijoy nager",
+    village: "goal nager",
+  },
+};
+const user2 = {
+  name: "abul",
+  country: "uganda"
+}
+console.log(userData.location.village);
+userData.location.thana = "adarsho sadar"
+// console.log(userData);
+const user3 = {...userData , ...user2}
+// console.log(user3);
+
+class Road {
+  constructor (length, location){
+    this.length = length
+    this.location = location
+  }
+}
+
+class mainRoad extends Road {
+  constructor(length, location, isBeautiful){
+    super(length , location)
+    this.isBeautiful = isBeautiful
+  }
+
+  get location (){
+    return this._location
+  }
+
+  set location (value){
+    return this._location = value
+  }
+}
+
+const ecbRoad = new mainRoad ("110m", "mirpur", "yes")
+console.log(ecbRoad);
+console.log(mainRoad instanceof Road);
+console.log(ecbRoad.location);
+
+
+
+
+
+

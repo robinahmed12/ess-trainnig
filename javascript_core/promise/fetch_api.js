@@ -67,4 +67,7 @@ async function getAllMeal() {
   );
   const meal = await res.json();
   console.log(meal);
+
 }
+
+

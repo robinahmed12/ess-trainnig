@@ -82,9 +82,18 @@ const num = [1, 2, 3, 4];
 // Array at()
 // Array join()
 let fruit = ["apple", "banana", "mango"];
-console.log(fruits.join(" | "));
+// console.log(fruits.join(" | "));
 
 // Array pop()
+const myName = ["abul", "kabul", "moina", "tia"]
+myName.push("a")
+myName.unshift("b")
+console.log(myName);
+
+
+
+
+
 // Array push()
 // Array shift()
 // Array unshift()
@@ -97,15 +106,15 @@ console.log(a.concat(b));
 // Array copyWithin()
 // Array flat()
 const arr = [4, [5, 7, 8], 89, [6, 8, 9]];
-console.log(arr.flat());
+// console.log(arr.flat());
 
 // Array slice()
 const score = [20, 60, 80];
-console.log(score.slice(0, 2));
+// console.log(score.slice(0, 2));
 
 // Array splice()
 const mark = [6, 8, 9, 10, 15];
-console.log(mark.splice(0, 3, 3));
+// console.log(mark.splice(0, 3, 3));
 
 // Array toSpliced()
 
@@ -113,32 +122,51 @@ console.log(mark.splice(0, 3, 3));
 
 // Array forEach
 const myNum = [6, 8, 9, 0, 7, 9, 12];
-myNum.forEach((n) => console.log(n));
+// myNum.forEach((n) => console.log(n));
 
 // Array map()
 const myNumber = [9, 7, 5, 68];
 const n = myNumber.map((n) => n);
-console.log(n);
+// console.log(n);
 
 // Array flatMap()
 // Array filter()
 const list = [6, 8, 10, 50, 70, 100];
 const evenNum = list.filter((n) => n % 2 === 0);
-console.log(evenNum);
+// console.log(evenNum);
 
 // Array reduce()
 const yourNum = [6, 8, 10, 7];
 const mySum = yourNum.reduce((sum, num) => sum + num, 0);
-console.log(mySum);
+// console.log(mySum);
 
 // Array reduceRight()
 // Array every()
+const everyNUm = [6, 8, 10 ,12 , 10]
+const allPass = everyNUm.every( n => n % 2 === 0)
+// console.log(allPass);
+
 // Array some()
+const hero = ["superman", "batman", "ironman" ]
+const h = hero.some(h => h.length ===  8)
+// console.log(h);
+
 // Array from()
 // Array keys()
 // Array entries()
+const obj = {
+    name : "hasan",
+    number: "01716900294"
+}
+// console.log(Object.entries(obj));
+
 // Array with()
 // Array Spread (...)
+const spRed = [6, 8, 10 ,14, 19, 100]
+const spRed1 = [10,15,19,200]
+const allNUm  = [...spRed , ...spRed1]
+console0.log(allNUm);
+
 // Array Rest (...)
 
 // search method
@@ -146,11 +174,11 @@ console.log(mySum);
 // Array lastIndexOf()
 // Array includes()
 const fruitName = ["apple", "mango", "banana"];
-console.log(fruitName.includes("apple"));
+// console.log(fruitName.includes("apple"));
 
 // Array find()
 const run = [100, 50, 60, 80];
-console.log(run.find((n) => n % 2 === 0));
+// console.log(run.find((n) => n % 2 === 0));
 
 // Array findIndex()
 // Array findLast()
@@ -161,8 +189,8 @@ console.log(run.find((n) => n % 2 === 0));
 // Alphabetic Sort
 // Array sort()
 // Array reverse()
-const myMoney = [500 , 700 , 500 , 300]
-console.log(myMoney.reverse().join(" | "));
+const myMoney = [500, 700, 500, 300];
+// console.log(myMoney.reverse().join(" | "));
 
 // Array toSorted()
 // Array toReversed()
