@@ -36,3 +36,14 @@ console.log(user1);
 console.log(updatedName(user1, "shawon"));
 
 // console.log(updatedName( 1, "shawon"));
+
+type RGB = [red: number, green: number, blue: number];
+function createColor(r: number, g: number, b: number): RGB {
+  return [
+    Math.min(255, Math.max(0, r)),
+    Math.min(255, Math.max(0, g)),
+    Math.min(255, Math.max(0, b)),
+  ];
+}
+const myColor = createColor(200, 100, 400);
+console.log(`RGB Color: rgb(${myColor.join(',')})`);
