@@ -54,5 +54,4 @@ enum TransactionType {
     TRANSFER = "TRANSFER"
 }
 
-// use case
-
+// us

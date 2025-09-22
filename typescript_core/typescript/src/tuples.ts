@@ -47,3 +47,6 @@ function createColor(r: number, g: number, b: number): RGB {
 }
 const myColor = createColor(200, 100, 400);
 console.log(`RGB Color: rgb(${myColor.join(',')})`);
+
+
+export {}

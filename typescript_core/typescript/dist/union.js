@@ -1,6 +1,8 @@
+"use strict";
 // exercise 01
+Object.defineProperty(exports, "__esModule", { value: true });
 // function
-var newAdmin = {
+const newAdmin = {
     id: 56,
     name: "hanry",
     role: "admin",
@@ -10,21 +12,21 @@ console.log(newAdmin);
 // exercise 2
 function calculateSum(input) {
     if (Array.isArray(input)) {
-        return input.reduce(function (acc, curr) { return acc + curr; }, 0);
+        return input.reduce((acc, curr) => acc + curr, 0);
     }
     return input;
 }
-var sum = calculateSum([6, 7, 8, 9]);
+const sum = calculateSum([6, 7, 8, 9]);
 console.log(sum);
-var cart = [
+const cart = [
     { name: "shoes", price: 200 },
     { name: "shirt", price: 500 },
     { name: "pant", price: 700 },
 ];
 function cartTotal(items) {
-    return items.reduce(function (acc, item) { return acc + item.price; }, 0);
+    return items.reduce((acc, item) => acc + item.price, 0);
 }
-var total = cartTotal(cart);
+const total = cartTotal(cart);
 console.log(total);
 //
 function checkNUmber(value) {
@@ -33,13 +35,14 @@ function checkNUmber(value) {
     }
     return value % 2 === 0 ? "even" : "odd";
 }
-var numbers = [2, 3, 4, 6, NaN, Infinity, 42, 7];
-numbers.forEach(function (num) {
-    var result = checkNUmber(num);
+const numbers = [2, 3, 4, 6, NaN, Infinity, 42, 7];
+numbers.forEach((num) => {
+    const result = checkNUmber(num);
     if (result === false) {
-        console.log("".concat(num, " is not a valid number"));
+        console.log(`${num} is not a valid number`);
     }
     else {
-        console.log("".concat(num, " is ").concat(result));
+        console.log(`${num} is ${result}`);
     }
 });
+//# sourceMappingURL=union.js.map

@@ -38,7 +38,7 @@ let userData: {
   email: "user@email.com",
   isLoggedIn: true,
   userId: 4,
-  location: "cumilla",
+  location: "b.baria",
 };
 
 // console.log(userData);
@@ -96,3 +96,17 @@ function consoleErr(err: string): void {
 // }
 
 // handleErr("Something went wrong!");
+
+type StringOrNumber = string | number;
+
+function combine(a: StringOrNumber, b: StringOrNumber) {
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString();
+  }
+  return a + b;
+}
+
+console.log(combine(5, 10));
+console.log(combine("5", 10));
+
+export {};
