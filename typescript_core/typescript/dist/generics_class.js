@@ -12,7 +12,6 @@ const userLogger = new Logger();
 userLogger.log({ id: 1, name: "Robin" });
 // Generic Form State Manager
 class FormState {
-    state;
     constructor(initialState) {
         this.state = initialState;
     }

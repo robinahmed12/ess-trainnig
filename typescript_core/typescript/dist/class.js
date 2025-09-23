@@ -1,9 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class LibraryItem {
-    title;
-    author;
-    isAvailable;
     constructor(title, author) {
         this.title = title;
         this.author = author;
@@ -24,7 +21,6 @@ class LibraryItem {
     }
 }
 class LibraryUser {
-    name;
     constructor(name) {
         this.name = name;
     }
@@ -38,7 +34,6 @@ class LibraryUser {
     }
 }
 class Book extends LibraryItem {
-    genre;
     constructor(title, author, genre) {
         super(title, author);
         this.genre = genre;
@@ -48,7 +43,6 @@ class Book extends LibraryItem {
     }
 }
 class DVD extends LibraryItem {
-    duration;
     constructor(title, author, duration) {
         super(title, author);
         this.duration = duration;
@@ -69,9 +63,6 @@ const user = new LibraryUser("Robin");
 user.borrowItem(book1);
 user.returnItem(book1);
 class Patient {
-    name;
-    age;
-    medicalHistory;
     constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -85,7 +76,6 @@ class Patient {
     }
 }
 class InsuredPatient extends Patient {
-    insuranceProvider;
     constructor(name, age, provider) {
         super(name, age);
         this.insuranceProvider = provider;
@@ -100,15 +90,12 @@ Patient1.addHistory("fractured arm in");
 console.log(Patient1.getDetails());
 console.log(Patient1.getInsuranceInfo);
 class Order {
-    orderId;
-    items;
     constructor(orderId, items) {
         this.orderId = orderId;
         this.items = items;
     }
 }
 class onlineOrder extends Order {
-    paymentMethod;
     constructor(orderId, items, paymentMethod) {
         super(orderId, items);
         this.paymentMethod = paymentMethod;

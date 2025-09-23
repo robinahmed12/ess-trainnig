@@ -4,11 +4,15 @@
     // File Layout
     // "rootDir": "./src",
     "outDir": "./dist",
+    "target": "ES6",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
+    // "module": "nodenext",
+    // "target": "esnext",
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
