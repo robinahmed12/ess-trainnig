@@ -25,7 +25,7 @@ users.forEach((u) => {
 
 enum StatusCode {
   Ok = 200,
-  NOT_FOUND = 404,
+  NOT_FOUND,
   ERROR = 500,
 }
 
@@ -47,11 +47,10 @@ handleResponse(StatusCode.Ok); // Request succeeded!
 handleResponse(StatusCode.NOT_FOUND); // Resource not found!
 handleResponse(StatusCode.ERROR);
 
-
 enum TransactionType {
-    DEPOSIT = "DEPOSIT",
-    WITHDRAWAL = "WITHDRAWAL",
-    TRANSFER = "TRANSFER"
+  DEPOSIT = "DEPOSIT",
+  WITHDRAWAL = "WITHDRAWAL",
+  TRANSFER = "TRANSFER",
 }
 
 // us

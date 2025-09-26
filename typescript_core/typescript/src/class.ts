@@ -182,8 +182,60 @@ class onlineOrder extends Order {
 const orders: onlineOrder[] = [
   new onlineOrder("ORD101", ["Phone"], "PayPal"),
   new onlineOrder("ORD102", ["Tablet", "Charger"], "Debit Card"),
-  new onlineOrder("ORD103", ["Headphones"], "Credit Card")
+  new onlineOrder("ORD103", ["Headphones"], "Credit Card"),
 ];
 
 // Process all orders
-orders.forEach(order => order.process());
+orders.forEach((order) => order.process());
+
+//
+
+abstract class watchList {
+  name: string;
+  releaseDate: number;
+  private boxOffice: number;
+  protected grossCollection: number;
+  constructor(
+    name: string,
+    releaseDate: number,
+    boxOffice: number,
+    grossCollection: number
+  ) {
+    this.name = name;
+    this.releaseDate = releaseDate;
+    this.boxOffice = boxOffice;
+    this.grossCollection = grossCollection;
+  }
+  watchNow(): void {
+    console.log(`${this.name} was too good`);
+  }
+
+  abstract newlyReleasedList(): void;
+}
+
+class FavMovieList extends watchList {
+  rating: number;
+  constructor(
+    name: string,
+    releaseDate: number,
+    rating: number,
+    boxOffice: number,
+    grossCollection: number
+  ) {
+    super(name, releaseDate, boxOffice, grossCollection);
+    this.rating = rating;
+  }
+
+  newlyReleasedList(): void {
+    console.log(`${this.name} was recently released`);
+  }
+}
+
+// const w1 = new watchList
+const fav1 = new FavMovieList("Avengers", 2002, 4.5, 1000, 500);
+// console.log(fav1.boxOffice);
+// console.log(fav1.grossCollection);
+
+
+fav1.watchNow();
+fav1.newlyReleasedList();

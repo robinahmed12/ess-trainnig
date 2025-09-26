@@ -153,11 +153,11 @@ function LogProperty(target, propertyName) {
     let value;
     Object.defineProperty(target, propertyName, {
         get: function () {
-            console.log(`👀 Someone is reading ${propertyName}: ${value}`);
+            console.log(` Someone is reading ${propertyName}: ${value}`);
             return value;
         },
         set: function (newValue) {
-            console.log(`✏️ Someone is writing ${propertyName}: ${newValue}`);
+            console.log(` Someone is writing ${propertyName}: ${newValue}`);
             value = newValue;
         },
         enumerable: true,
@@ -181,4 +181,35 @@ const account = new BankAccount("John's Account", 100);
 console.log("Current balance:", account.balance);
 account.deposit(50);
 console.log("Final balance:", account.balance);
+//
+function LogMethod(target, methodName, descriptor) {
+    const original = descriptor.value;
+    descriptor.value = function (...args) {
+        console.log(`Calling ${methodName} with`, args);
+        return original.apply(this, args);
+    };
+}
+class Calculator {
+    add(a, b) {
+        return a + b;
+    }
+}
+__decorate([
+    LogMethod,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:returntype", void 0)
+], Calculator.prototype, "add", null);
+const calc = new Calculator();
+console.log(calc.add(3, 6));
+// @Delay – Delays method execution
+function Delay(ms) {
+    return function (target, methodName, descriptor) {
+        const original = descriptor.value;
+        descriptor.value = function (...arg) {
+            console.log(`Delaying ${methodName} by ${ms}ms`);
+            setTimeout(() => original.apply(this, arg), ms);
+        };
+    };
+}
 //# sourceMappingURL=decorators.js.map

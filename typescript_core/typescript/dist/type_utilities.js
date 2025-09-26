@@ -50,4 +50,25 @@ function logUser(id, name) {
 }
 const args = [1, "Alice"];
 logUser(...args);
+const cats = {
+    miffy: { age: 10, breed: "Persian" },
+    boris: { age: 5, breed: "Maine Coon" },
+    mordred: { age: 16, breed: "British Shorthand" },
+};
+console.log(cats.boris);
+const C1 = { area: 100 };
+const c2 = { name: "Italy", year: 2002, area: 400 };
+const country = {
+    name: "bd",
+    area: 700,
+    population: 400,
+    year: 2002,
+};
+console.log(country);
+const recordSports = {
+    cricket: " i love cricket",
+    football: "",
+    hockey: ""
+};
+console.log(recordSports);
 //# sourceMappingURL=type_utilities.js.map

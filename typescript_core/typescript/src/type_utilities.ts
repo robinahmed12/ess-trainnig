@@ -83,3 +83,57 @@ type LogParams = Parameters<typeof logUser>;
 
 const args: LogParams = [1, "Alice"];
 logUser(...args);
+
+//
+
+type CatName = "miffy" | "boris" | "mordred";
+
+interface CatInfo {
+  age: number;
+  breed: string;
+}
+
+const cats: Record<CatName, CatInfo> = {
+  miffy: { age: 10, breed: "Persian" },
+  boris: { age: 5, breed: "Maine Coon" },
+  mordred: { age: 16, breed: "British Shorthand" },
+};
+
+console.log(cats.boris);
+
+//
+
+interface countryList {
+  name: string;
+  area: number;
+  population: number;
+  year: number;
+}
+
+type pickCountry = Pick<countryList, "area">;
+const C1: pickCountry = { area: 100 };
+type omitCountry = Omit<countryList, "population">;
+const c2: omitCountry = { name: "Italy", year: 2002, area: 400 };
+type partialCountry = Partial<countryList>;
+type requiredCountry = Required<countryList>;
+const country: countryList = {
+  name: "bd",
+  area: 700,
+  population: 400,
+  year: 2002,
+};
+console.log(country);
+
+//
+
+type sports = "cricket" | "football" | "hockey";
+
+const recordSports: Record<sports, string> = {
+  cricket: " i love cricket",
+  football: "",
+  hockey: ""
+};
+console.log(recordSports);
+
+
+

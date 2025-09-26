@@ -107,8 +107,35 @@ class onlineOrder extends Order {
 const orders = [
     new onlineOrder("ORD101", ["Phone"], "PayPal"),
     new onlineOrder("ORD102", ["Tablet", "Charger"], "Debit Card"),
-    new onlineOrder("ORD103", ["Headphones"], "Credit Card")
+    new onlineOrder("ORD103", ["Headphones"], "Credit Card"),
 ];
 // Process all orders
-orders.forEach(order => order.process());
+orders.forEach((order) => order.process());
+//
+class watchList {
+    constructor(name, releaseDate, boxOffice, grossCollection) {
+        this.name = name;
+        this.releaseDate = releaseDate;
+        this.boxOffice = boxOffice;
+        this.grossCollection = grossCollection;
+    }
+    watchNow() {
+        console.log(`${this.name} was too good`);
+    }
+}
+class FavMovieList extends watchList {
+    constructor(name, releaseDate, rating, boxOffice, grossCollection) {
+        super(name, releaseDate, boxOffice, grossCollection);
+        this.rating = rating;
+    }
+    newlyReleasedList() {
+        console.log(`${this.name} was recently released`);
+    }
+}
+// const w1 = new watchList
+const fav1 = new FavMovieList("Avengers", 2002, 4.5, 1000, 500);
+// console.log(fav1.boxOffice);
+// console.log(fav1.grossCollection);
+fav1.watchNow();
+fav1.newlyReleasedList();
 //# sourceMappingURL=class.js.map

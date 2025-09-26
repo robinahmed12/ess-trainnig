@@ -20,7 +20,7 @@ users.forEach((u) => {
 var StatusCode;
 (function (StatusCode) {
     StatusCode[StatusCode["Ok"] = 200] = "Ok";
-    StatusCode[StatusCode["NOT_FOUND"] = 404] = "NOT_FOUND";
+    StatusCode[StatusCode["NOT_FOUND"] = 201] = "NOT_FOUND";
     StatusCode[StatusCode["ERROR"] = 500] = "ERROR";
 })(StatusCode || (StatusCode = {}));
 function handleResponse(code) {

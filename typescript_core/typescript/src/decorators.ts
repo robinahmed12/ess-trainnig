@@ -143,11 +143,11 @@ function LogProperty(target: any, propertyName: string) {
   let value: any;
   Object.defineProperty(target, propertyName, {
     get: function () {
-      console.log(`👀 Someone is reading ${propertyName}: ${value}`);
+      console.log(` Someone is reading ${propertyName}: ${value}`);
       return value;
     },
     set: function (newValue: any) {
-      console.log(`✏️ Someone is writing ${propertyName}: ${newValue}`);
+      console.log(` Someone is writing ${propertyName}: ${newValue}`);
       value = newValue;
     },
     enumerable: true,
@@ -174,3 +174,42 @@ const account = new BankAccount("John's Account", 100);
 console.log("Current balance:", account.balance);
 account.deposit(50);
 console.log("Final balance:", account.balance);
+
+//
+function LogMethod(
+  target: any,
+  methodName: string,
+  descriptor: PropertyDescriptor
+) {
+  const original = descriptor.value;
+  descriptor.value = function (...args: any[]) {
+    console.log(`Calling ${methodName} with`, args);
+    return original.apply(this, args);
+  };
+}
+class Calculator {
+  @LogMethod
+  add(a: number, b: number) {
+    return a + b;
+  }
+}
+
+const calc = new Calculator();
+console.log(calc.add(3, 6));
+
+// @Delay – Delays method execution
+
+function Delay(ms: number) {
+  return function (
+    target: any,
+    methodName: string,
+    descriptor: PropertyDescriptor
+  ) {
+    const original = descriptor.value;
+    descriptor.value = function (...arg: any[]) {
+      console.log(`Delaying ${methodName} by ${ms}ms`);
+      setTimeout(() => original.apply(this, arg), ms);
+    };
+  };
+}
+
