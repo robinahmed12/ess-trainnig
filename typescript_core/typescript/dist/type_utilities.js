@@ -11,11 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const u4 = { id: 1, name: "Dave" };
 const sport1 = { country: "BD", id: 9 };
-console.log(sport1);
 const u5 = { id: 1, name: "Eve" };
-console.log(u5);
 const sport2 = { id: 1, country: "thailand" };
-console.log(sport2);
 const roles = {
     admin: "Full Access",
     user: "Limited Access",
@@ -35,7 +32,7 @@ function getUser() {
     return { id: 1, name: "Alice" };
 }
 const u = { id: 2, name: "Bob" };
-console.log(u);
+// console.log(u);
 //
 function fetchData() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -68,7 +65,7 @@ console.log(country);
 const recordSports = {
     cricket: " i love cricket",
     football: "",
-    hockey: ""
+    hockey: "",
 };
 console.log(recordSports);
 //# sourceMappingURL=type_utilities.js.map
